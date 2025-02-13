@@ -2,16 +2,20 @@ import React from "react";
 import { Button } from "@easyagent/ui/components/button";
 import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
-import { useChat } from "@ai-sdk/react";
 import { UIMessage } from "@ai-sdk/ui-utils";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 export default function App() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    maxSteps: 5,
-    api: `${API_BASE}/stream-data`,
-  });
+  const messages:UIMessage[] = [
+    { id: "1", role: "user", content: "Hello!",parts:[] },
+    {
+      id: "2",
+      role: "assistant",
+      content: "Hello! How can I assist you today?",
+      parts:[]
+    },
+  ];
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 min-h-screen">
@@ -22,12 +26,10 @@ export default function App() {
 
       {/* Input area */}
       <div className="w-full flex max-w-3xl mx-auto mb-4 border border-gray-300 rounded-xl flex-col p-4">
-        <form onSubmit={handleSubmit} className="flex flex-col w-full">
+        <form className="flex flex-col w-full">
           <TextareaAutosize
             className="resize-none border-none focus:outline-none shadow-none mb-6"
             placeholder="Type your message..."
-            value={input}
-            onChange={handleInputChange}
           />
           <Button type="submit">Send</Button>
         </form>
