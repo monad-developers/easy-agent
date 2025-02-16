@@ -1,7 +1,7 @@
 import { z } from "zod"
 import { names } from "./ids"
 
-export type GetPricesResult = {
+export type PythPricesResult = {
   binary: {
     encoding: string
     data: Array<string>
@@ -27,6 +27,11 @@ export type GetPricesResult = {
     }
   }>
 }
+
+export type GetPricesResult= {
+  name: string
+  price: string
+}[]
 
 export const GetPricesParametersSchema = z.object({
   symbols: z.array(z.enum(names)),
