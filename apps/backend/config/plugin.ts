@@ -1,9 +1,7 @@
-import ThinkingAgent from "@easyagent/thinking"
 import PythFetcherAgent from "@easyagent/pyth-fetcher"
 import { ToolInvocation } from "ai"
 
 export const plugins = [
-  ThinkingAgent,
   PythFetcherAgent
 ];
 
