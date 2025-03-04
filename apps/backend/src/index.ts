@@ -1,5 +1,3 @@
-import { PythFetcherAgent } from '@easyagent/pyth-fetcher';
-import { ThinkingAgent } from '@easyagent/thinking';
 import { serve } from '@hono/node-server';
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 import { createDataStream, generateId, streamText, wrapLanguageModel } from 'ai';

@@ -1,0 +1,15 @@
+{
+  "extends": "../../lib/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
